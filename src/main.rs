@@ -3,9 +3,8 @@ use rand::Rng;
 use std::cmp::Ordering;
 
 fn main() {
-    println!("Seja bem-vindo ao meu jogo, vamos iniciar!");
-
-    println!("Esse programa escolheu um número aleatório, entre 1 a 100, e você tem que acertar qual ele escolheu. Você consegue fazer isso? Vamos lá! Digite um número inteiro! \n");
+println!("Esse programa escolheu um número aleatório, entre 1 a 100, e você tem que acertar qual ele escolheu.\n\
+Vamos lá! Digite um número inteiro! \n");
 
     let secret_number = rand::thread_rng().gen_range(1..=100);
 
@@ -16,7 +15,7 @@ fn main() {
     	        .read_line(&mut guess)
     	        .expect("A leitura da variável falhou, retorno Err");
 
-	    println!("O seu palpite é: {guess}");
+	    println!(" ");
 
             let guess: u32 = match guess.trim().parse() {
                 Ok(num) => num,
@@ -34,5 +33,6 @@ fn main() {
                         break;
       }
     }
+      println!(" ");
   }
 }
